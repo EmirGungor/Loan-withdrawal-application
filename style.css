@@ -1,0 +1,152 @@
+/* Global ayarlar */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./param.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: #f8f9fa;
+  background-color: rgba(0, 0, 0, 0.6); /* Siyah arka planı biraz yaymak için */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Siyahın yayılması */
+  backdrop-filter: blur(6px); /* Bulanıklaştırma efekti */
+  z-index: -1;
+}
+
+/* Konteyner stil */
+/* Konteyner başlangıçta yukarıda ve saydam olacak */
+.container {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+  position: relative;
+  opacity: 0; /* Başlangıçta saydam */
+  transform: translateY(-50px); /* Başlangıçta yukarıda */
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+/* Container görünür hale geldiğinde */
+.container.show {
+  opacity: 1;
+  transform: translateY(0); /* Aşağı kayma efekti */
+}
+
+/* Başlık stil */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f8f9fa;
+}
+
+/* Form elemanları */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 16px;
+  color: #f8f9fa;
+  background-color: #444;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+}
+
+/* Sonuçların stili */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f8f9fa;
+  text-align: left;
+}
+
+/* WhatsApp ikonunun stili */
+#whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+#whatsapp-icon:hover {
+  transform: scale(1.15);
+}
+
+a img {
+  border-radius: 50%;
+  background-color: #25d366;
+  padding: 10px;
+}
+
+/* Yükleme ekranı stil */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 50, 133, 0); /* Hafif şeffaf arka plan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey merkezleme */
+    align-items: center; /* Yatay merkezleme */
+    z-index: 9999; /* Diğer içeriklerin üstünde görünmesini sağlar */
+}
+
+/* Yükleniyor yazısı stil */
+#loading-screen p {
+    font-size: 24px;
+    color: #99cabe;
+    margin-top: 20px;
+}
+
+/* Yükleme ekranı için spinner stil */
+.spinner {
+    border: 8px solid #f3f3f3; /* Arka plan rengi */
+    border-top: 8px solid #3498db; /* Spinner rengi */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
