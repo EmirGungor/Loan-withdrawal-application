@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(./param.jpg) no-repeat center center fixed;
+  background: url(./card.png) no-repeat center center fixed;
   background-size: cover;
   color: #f8f9fa;
   background-color: rgba(0, 0, 0, 0.6); /* Siyah arka planı biraz yaymak için */
